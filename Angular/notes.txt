@@ -1,0 +1,10 @@
+npm install -g @angular/cli
+
+// check cli version
+ng --version
+
+// create an app
+ng new first-ng-app
+
+// create an app with some configurations
+ng new first-ng-app --inline-styles --inline-template
