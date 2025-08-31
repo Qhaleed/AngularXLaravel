@@ -9,7 +9,7 @@ import { Home } from './home/home';
 
   <main>
     <header class="brand-name">
-     <img class="brand-logo" [src]="'assets/logo.svg'" alt="logo">
+     <img class="brand-logo" [src]="'assets/location-pin.svg'" alt="logo">
 
     </header>
     <section class="content">
@@ -22,6 +22,5 @@ import { Home } from './home/home';
   styleUrl: './app.css'
 })
 export class App {
-
   titles = 'homes';
 }
