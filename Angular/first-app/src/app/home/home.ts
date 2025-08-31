@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { HousingLocation } from '../housing-location/housing-location';
+import { Housinglocation } from '../housinglocation';
+import { HousingLocationComponent } from '../housing-location/housing-location';
 @Component({
   selector: 'app-home',
-  imports: [HousingLocation],
+  imports: [HousingLocationComponent],
   template: `
    <section>
     <form>
@@ -12,7 +13,7 @@ import { HousingLocation } from '../housing-location/housing-location';
   </section>
 
   <section class="results">
-    <app-housing-location></app-housing-location>
+    <app-housing-location [Housinglocation]="Housinglocation"></app-housing-location>
   </section>
 
 
@@ -25,7 +26,7 @@ export class Home {
 
   readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
 
-  housingLocation: HousingLocation = {
+  Housinglocation: Housinglocation = {
     id: 999,
     name: "tesssting home",
     city: "Zamboanga City",
