@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { HomeComponent } from './home/home';
 import { RouterModule } from '@angular/router';
 
@@ -15,15 +15,16 @@ import { RouterModule } from '@angular/router';
     <a [routerLink]="['/']">
     <header class="brand-name">
      <img class="brand-logo" [src]="'assets/location-pin.svg'" alt="logo">
-
+      <h1>This is the AppComponent</h1>
     </header>
 </a>
     <section class="content">
-
+<!--
     <app-home>
-</app-home>
+</app-home> -->
       <router-outlet>
-</router-outlet>
+
+      </router-outlet>
     </section>
   </main>
 
@@ -32,5 +33,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  titles = 'homes';
+  titles = 'homeeess';
 }

@@ -6,6 +6,7 @@ import { HousingServices } from '../housing';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [HousingLocationComponent, CommonModule],
   template: `
    <section>
@@ -35,7 +36,6 @@ import { HousingServices } from '../housing';
 
 
 export class HomeComponent {
-  readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
 
   housingLocationList: housingLocation[] = [];
 
