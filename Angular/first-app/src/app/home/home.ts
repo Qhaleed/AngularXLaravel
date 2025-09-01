@@ -18,14 +18,10 @@ import { HousingServices } from '../housing';
 
   <section class="results">
 
-
-  <app-housing-location
-
-        *ngFor="let location of housingLocationList"
-        [housingLocation]="location">
-
-  </app-housing-location>
-
+  <div *ngFor="let location of housingLocationList">
+    <app-housing-location [housingLocation]="location">
+    </app-housing-location>
+  </div>
 
   </section>
 
