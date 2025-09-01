@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { housingLocation } from '../housinglocation';
 import { HousingLocationComponent } from '../housing-location/housing-location';
 @Component({
   selector: 'app-home',
-  imports: [HousingLocationComponent],
+  imports: [HousingLocationComponent, CommonModule],
   template: `
    <section>
     <form>
@@ -13,7 +14,6 @@ import { HousingLocationComponent } from '../housing-location/housing-location';
   </section>
 
   <section class="results">
-  <h1> Houses should be rendering here</h1>
 
 
   <app-housing-location
@@ -30,24 +30,7 @@ import { HousingLocationComponent } from '../housing-location/housing-location';
   `,
   styleUrl: './home.css'
 })
-// export class Home {
 
-//   // add read only image
-
-//   // readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
-
-//   // Housinglocation: Housinglocation = {
-//   //   id: 999,
-//   //   name: "tesssting home",
-//   //   city: "Zamboanga City",
-//   //   state: "Zamboanga del Sur",
-//   //   photo: `${this.baseUrl}/example-house.jpg`,
-//   //   availableUnits: 1,
-//   //   wifi: true,
-//   //   laundry: true
-//   // }
-
-// }
 
 export class HomeComponent {
   readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
@@ -155,3 +138,21 @@ export class HomeComponent {
     }
   ];
 }
+// export class Home {
+
+//   // add read only image
+
+//   // readonly baseUrl = 'https://angular.io/assets/images/tutorials/faa';
+
+//   // Housinglocation: Housinglocation = {
+//   //   id: 999,
+//   //   name: "tesssting home",
+//   //   city: "Zamboanga City",
+//   //   state: "Zamboanga del Sur",
+//   //   photo: `${this.baseUrl}/example-house.jpg`,
+//   //   availableUnits: 1,
+//   //   wifi: true,
+//   //   laundry: true
+//   // }
+
+// }
