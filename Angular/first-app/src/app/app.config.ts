@@ -2,7 +2,7 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessC
 import { provideRouter } from '@angular/router';
 import { provideProtractorTestingSupport } from '@angular/platform-browser';
 
-import { routes } from './app.routes';
+import routeConfig from './routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
@@ -10,7 +10,7 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideProtractorTestingSupport(),
-    provideRouter(routes),
+    provideRouter(routeConfig),
     provideClientHydration(withEventReplay())
   ]
 };
