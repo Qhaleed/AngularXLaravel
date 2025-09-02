@@ -6,7 +6,7 @@ import { HousingServices } from '../housing';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
+  // standalone: true,
   imports: [HousingLocationComponent, CommonModule],
   template: `
    <section>
@@ -18,10 +18,16 @@ import { HousingServices } from '../housing';
 
   <section class="results">
 
-  <div *ngFor="let location of housingLocationList">
+  <!-- <div *ngFor="let location of housingLocationList">
     <app-housing-location [housingLocation]="location">
     </app-housing-location>
-  </div>
+  </div> -->
+
+  @for(housingLocation of housingLocationList; track $index){
+    <app-housing-location [housingLocation]="housingLocation">
+    </app-housing-location>
+  }
+
 
   </section>
 
