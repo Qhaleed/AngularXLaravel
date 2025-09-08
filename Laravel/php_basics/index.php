@@ -1,5 +1,14 @@
 <?php
 
+require __DIR__ . '/vendor/autoload.php';
+use Cocur\Slugify\Slugify;
+
+
+
+$slugify = new Slugify();
+
+echo $slugify -> slugify('the sky is blue, and the grass is green !!!!');
+
 $myName = "Res";
 echo "The name of the coder is " . $myName;
 echo "\n";
