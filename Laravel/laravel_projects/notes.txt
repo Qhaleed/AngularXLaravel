@@ -1,0 +1,4 @@
+08/09/25
+composer artisan serve - To run the server
+
+I learnt to use {{$slot}} to make code cleaner to 
