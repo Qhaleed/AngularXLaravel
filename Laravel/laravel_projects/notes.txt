@@ -1,4 +1,8 @@
 08/09/25
 composer artisan serve - To run the server
 
+To have a reusable component, the view shlould be placeholder.blade.php
+
 I learnt to use {{$slot}} to make code cleaner to 
+
+
