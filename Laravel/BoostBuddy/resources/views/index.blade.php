@@ -19,7 +19,7 @@
             </style>
         @endif
     </head>
-   <body class="h-screen bg-black">
+   <body class="flex flex-col h-screen bg-gray-900 justify-middle align-middle ">
 
             <x-navbar>
                 BoostBuddy
@@ -37,5 +37,30 @@
 
 
             </x-header>
+
+
+
+            <x-content>
+                <x-slot:gridhead>
+                    BoostBuddy
+                </x-slot:gridhead>
+
+            <x-slot:gridsubtitle>
+            Find your dream duo now!
+            </x-slot:gridsubtitle>
+             </x-content>
+
+
+
+
+
+
+
+
+
+
+            <x-onboarding>
+                    Join Now!
+            </x-onboarding>
    </body>
 </html>
