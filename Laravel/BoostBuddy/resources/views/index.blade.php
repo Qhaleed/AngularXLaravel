@@ -19,7 +19,7 @@
             </style>
         @endif
     </head>
-   <body class="flex flex-col h-screen max-w-screen  bg-gray-900 justify-middle align-middle ">
+   <body class="flex flex-col h-screen max-w-screen font-cinzel  bg-gray-900 justify-middle align-middle ">
 
             <x-navbar>
                 BoostBuddy
