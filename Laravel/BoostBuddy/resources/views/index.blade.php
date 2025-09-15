@@ -23,8 +23,6 @@
 
             <x-navbar>
                 BoostBuddy
-
-
             </x-navbar>
 
             <x-header>
