@@ -19,7 +19,43 @@
             </style>
         @endif
     </head>
-   <body class="flex flex-col h-screen max-w-screen font-cinzel  bg-gray-900 justify-middle align-middle ">
+   <body class="flex flex-col h-screen max-w-screen font-cinzel  bg-gray-900 justify-middle align-middle">
+
+    {{-- signup form --}}
+    <x-signup-modal id="signup-modal" >
+
+        <form action="" class="flex flex-col gap-1.5 align-middle">
+            <h1 class="text-white">Name</h1>
+            <x-input type="text" placeholdertemp="Username">
+            </x-input>
+             <h1 class="text-white">Password</h1>
+            <x-input type="password" placeholdertemp="Password">
+            </x-input>
+             <h1 class="text-white">Email</h1>
+            <x-input type="Email" placeholdertemp="Email">
+            </x-input>
+
+            <button class="bg-blue-500 mt-3 rounded-lg mx-auto px-3 py-1 text-white">Sign up</button>
+        </form>
+
+    </x-modal>
+
+    {{-- login form --}}
+    <x-login-modal id="login-modal">
+
+        <form action="" class="flex flex-col gap-1.5 align-middle">
+            <h1 class="text-white">Name</h1>
+            <x-input type="text" placeholdertemp="Username">
+            </x-input>
+             <h1 class="text-white">Password</h1>
+            <x-input type="password" placeholdertemp="Password">
+            </x-input>
+            \
+
+            <button class="bg-blue-500 mt-3 rounded-lg mx-auto px-3 py-1 text-white">Login</button>
+        </form>
+
+    </x-modal>
 
             <x-navbar>
                 BoostBuddy

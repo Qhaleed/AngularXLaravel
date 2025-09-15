@@ -2,11 +2,11 @@
 
             {{ $slot }}
     <div>
-  <x-auth-button variant="primary">
+  <x-auth-button variant="primary" id="signup-btn" >
                 Sign Up
             </x-auth-button>
 
-            <x-auth-button variant="outline">
+            <x-auth-button variant="outline" id="login-btn">
                 Login
             </x-auth-button>
     </div>
