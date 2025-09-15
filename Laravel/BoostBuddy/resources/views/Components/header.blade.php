@@ -1,5 +1,5 @@
 <div class="relative flex flex-col  bg-black
- text-white align-middle justify-center text-center gap-10 max-w-screen p-10 pt-40">
+ text-white align-middle justify-center text-center gap-10 max-w-screen p-10 pt-60">
 
 
     <video class="absolute top-0 left-0 w-full h-full object-cover z-0"
@@ -12,7 +12,7 @@
 
     </video>
 
-    <div class="relative z-10">
+    <div class="flex flex-col relative z-10 gap-10">
 
       <h1 class="text-5xl">
         {{ $title }}

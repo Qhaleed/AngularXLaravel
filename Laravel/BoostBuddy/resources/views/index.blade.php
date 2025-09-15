@@ -31,7 +31,8 @@
                 </x-slot:title>
 
                 <x-slot:subtitle>
-                Find your perfect gaming partner and dominate the battlefield together. Connect with skilled <br /> players who match your playstyle and climb the ranks as a team
+                Team up and dominate.
+                <br />
 
                 </x-slot:subtitle>
 
