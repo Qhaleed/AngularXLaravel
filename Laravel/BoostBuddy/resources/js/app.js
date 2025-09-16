@@ -16,6 +16,11 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log("login-btn is read")
     });
 
+    document.getElementById('onboarding-btn').addEventListener('click', function () {
+        document.getElementById('signup-modal').classList.remove('hidden');
+        document.getElementById('signup-modal').classList.add('flex');
+    })
+
     // Close modals
     document.getElementById('signup-close-btn').addEventListener('click', function () {
         document.getElementById('signup-modal').classList.add('hidden');
