@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('login-btn').addEventListener('click', function () {
         document.getElementById('login-modal').classList.remove('hidden');
         document.getElementById('login-modal').classList.add('flex');
-        console.log("login-btn is read")
     });
 
     document.getElementById('onboarding-btn').addEventListener('click', function () {
