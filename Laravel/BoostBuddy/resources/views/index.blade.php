@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>BoostBuddy.GG</title>
-
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
@@ -82,9 +81,13 @@
                     BoostBuddy
                 </x-slot:gridhead>
 
+                 <x-onboarding>
+                    Join Now!
+                </x-onboarding>
             <x-slot:gridsubtitle>
             Find your dream duo now!
             </x-slot:gridsubtitle>
+
              </x-content>
 
 
@@ -96,8 +99,16 @@
 
 
 
-            <x-onboarding>
-                    Join Now!
-            </x-onboarding>
+
+
+            <x-table>
+            </x-table>
+
+
+
+            <x-footer>
+            </x-footer>
+
+            <script src="./node_modules/preline/dist/preline.js"></script>
    </body>
 </html>

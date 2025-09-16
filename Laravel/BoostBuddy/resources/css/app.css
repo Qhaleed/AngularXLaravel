@@ -12,3 +12,10 @@
         "Noto Color Emoji";
     --font-cinzel: "Cinzel", serif;
 }
+
+/* Preline UI */
+@source "./node_modules/preline/dist/*.js";
+@import "./node_modules/preline/variants.css";
+
+/* Plugins */
+@plugin "@tailwindcss/forms";
