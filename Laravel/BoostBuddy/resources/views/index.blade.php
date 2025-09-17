@@ -37,21 +37,38 @@
             <button class="bg-blue-500 mt-3 rounded-lg mx-auto px-3 py-1 text-white">Sign up</button>
         </form>
 
-    </x-modal>
+    </x-signup-modal>
 
     {{-- login form --}}
     <x-login-modal id="login-modal">
 
-        <form action="" class="flex flex-col gap-1.5 align-middle">
-            <h1 class="text-white">Name</h1>
-            <x-input type="text" placeholdertemp="Username">
-            </x-input>
-             <h1 class="text-white">Password</h1>
-            <x-input type="password" placeholdertemp="Password">
-            </x-input>
-            \
+        <form
 
-            <button class="bg-blue-500 mt-3 rounded-lg mx-auto px-3 py-1 text-white">Login</button>
+        action="{{ route('login.attempt') }}"
+        method="POST" class="flex flex-col gap-1.5 align-middle">
+         @csrf
+            @if ($errors->any()){
+                <div>
+                     <ul>
+                        @foreach ( $errors->all() as $error )
+                            <li>{{$error}}</li>
+                        @endforeach
+                     </ul>
+                </div>
+            }
+
+        @endif
+
+
+            <h1 class="text-white">Email</h1>
+            <x-input type="email" name="email" placeholdertemp="email">
+            </x-input>
+             <h1 class="text-white"  >Password</h1>
+            <x-input type="password" placeholdertemp="Password" name="password">
+            </x-input>
+
+
+            <button class="bg-blue-500 mt-3 rounded-lg mx-auto px-3 py-1 text-white" type="submit">Login</button>
         </form>
 
     </x-modal>
