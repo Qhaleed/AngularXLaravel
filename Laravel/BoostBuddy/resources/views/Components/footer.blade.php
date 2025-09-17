@@ -1,4 +1,4 @@
-<div class="flex flex-row bg-gray-900 justify-between text-white text-sm w-full px-10 py-10 mt-10">
+<div class="flex flex-row bg-gray-800 justify-between text-white text-sm w-full px-10 py-10 mt-10">
 
     <div>
         <h1 class="text-3xl">Qhals'</h1>
