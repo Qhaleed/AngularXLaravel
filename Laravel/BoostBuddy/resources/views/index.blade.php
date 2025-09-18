@@ -23,18 +23,24 @@
     {{-- signup form --}}
     <x-signup-modal id="signup-modal" >
 
-        <form action="" class="flex flex-col gap-1.5 align-middle">
+        <form
+        {{-- action="{{ route('signup.attempt') }}" --}}
+        action="/signup"
+        method="POST"
+        class="flex flex-col gap-1.5 align-middle">
+            @csrf
+
             <h1 class="text-white">Name</h1>
-            <x-input type="text" placeholdertemp="Username">
+            <x-input type="text" placeholdertemp="Username" name="name">
             </x-input>
              <h1 class="text-white">Password</h1>
-            <x-input type="password" placeholdertemp="Password">
+            <x-input type="password" placeholdertemp="Password" name="password">
             </x-input>
              <h1 class="text-white">Email</h1>
-            <x-input type="Email" placeholdertemp="Email">
+            <x-input type="Email" placeholdertemp="Email" name="email">
             </x-input>
 
-            <button class="bg-blue-500 mt-3 rounded-lg mx-auto px-3 py-1 text-white">Sign up</button>
+            <button class="bg-blue-500 mt-3 rounded-lg mx-auto px-3 py-1 text-white" type="submit">Sign up</button>
         </form>
 
     </x-signup-modal>
@@ -71,7 +77,7 @@
             <button class="bg-blue-500 mt-3 rounded-lg mx-auto px-3 py-1 text-white" type="submit">Login</button>
         </form>
 
-    </x-modal>
+    </x-login-modal>
 
             <x-navbar>
                 BoostBuddy
