@@ -6,6 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 class DuoRequest extends Model
 {
+
+
+    // public function index()
+    // {
+    //     $duoRequests = DuoRequest::all();
+    //     return view('index', compact('duoRequests'));
+    // }
+
+
      use HasFactory;
 
     protected $fillable = [

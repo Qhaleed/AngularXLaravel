@@ -1,3 +1,5 @@
+{{-- @props(['duoRequests' => []]); --}}
+
 <div class="flex flex-col mx-10 m-auto">
   <div class="-m-1.5 overflow-x-auto">
     <div class="p-1.5 min-w-full inline-block align-middle">
@@ -36,16 +38,23 @@
                 <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Accept</th>
               </tr>
             </thead>
+
+
+
             <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
                 {{-- All data are hardcoded and will soon be dynamic when db is up --}}
-                <x-ticket name="Blebleble" game="valorant" server="hongkong">
-                </x-ticket>
-                <x-ticket name="Buj" game="valorant" server="hongkong">
-                </x-ticket>
-                <x-ticket name="Emperor Shinji" game="valorant" server="hongkong">
-                </x-ticket>
-                <x-ticket name="Backhand" game="valorant" server="hongkong">
-                </x-ticket>
+                {{-- <x-ticket name="Blebleble" game="valorant" server="hongkong">
+                </x-ticket> --}}
+                {{-- @foreach ($duoRequests as $request)
+                    <x-ticket :name="$request->user->name" :game="$request->game" :server="$request->server" />
+
+                @endforeach --}}
+                {{-- {{ $slot }} --}}
+                        @foreach ( $duoRequests as $request )
+
+                            <x-ticket :game="$request->game" :server="$request->server" />
+
+                        @endforeach
 
 
 
