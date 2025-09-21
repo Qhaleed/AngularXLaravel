@@ -83,49 +83,46 @@
                 BoostBuddy
             </x-navbar>
 
-            <x-header>
-                <x-slot:title>
-                 Boost Buddy
-                </x-slot:title>
-
-                <x-slot:subtitle>
-                Team up and dominate.
-                <br />
-
-                </x-slot:subtitle>
+            @if (Auth::user())
+                     <x-table>
+                    </x-table>
 
 
-            </x-header>
+            @else
+                <x-header>
+                            <x-slot:title>
+                            Boost Buddy
+                            </x-slot:title>
+
+                            <x-slot:subtitle>
+                            Team up and dominate.
+                            <br />
+
+                            </x-slot:subtitle>
 
 
+                        </x-header>
+                        <x-content>
+                            <x-slot:gridhead>
+                                BoostBuddy
+                            </x-slot:gridhead>
+                            <x-onboarding>
+                                    Join Now!
+                            </x-onboarding>
 
-            <x-content>
-                <x-slot:gridhead>
-                    BoostBuddy
-                </x-slot:gridhead>
+                            <x-slot:gridsubtitle>
+                            Find your dream duo now!
+                            </x-slot:gridsubtitle>
 
-                 <x-onboarding>
-                    Join Now!
-                </x-onboarding>
-            <x-slot:gridsubtitle>
-            Find your dream duo now!
-            </x-slot:gridsubtitle>
+                        </x-content>
 
-             </x-content>
-
-
-
-
-
-
-
+            @endif
 
 
 
 
 
-            <x-table>
-            </x-table>
+
 
 
 

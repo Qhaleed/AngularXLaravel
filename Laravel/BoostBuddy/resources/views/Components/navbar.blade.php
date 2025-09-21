@@ -1,4 +1,4 @@
-<nav class="flex items-center justify-between px-10 flex-row bg-gray-900 text-white w-full p-1 my-5">
+<nav class="flex items-center justify-between px-10 flex-row bg-gray-800 text-white w-full p-1 py-5">
     {{-- Logo name  --}}
             {{ $slot }}
     <div>

@@ -11,6 +11,21 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+
+   public function duoRequests()
+    {
+        return $this->hasMany(DuoRequest::class);
+    }
+
+    // Requests this user has accepted
+    public function acceptedRequests()
+    {
+        return $this->hasMany(AcceptedRequest::class);
+    }
+
+
+
+
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable, HasApiTokens;
 

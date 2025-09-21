@@ -1,0 +1,6 @@
+<button class=" w-auto m-auto rounded-2xl p-3 bg-transparent
+ text-white border-1 hover:bg-white hover:text-black transition duration-350"
+id="request-btn"
+ >
+{{ $slot }}
+</button>
