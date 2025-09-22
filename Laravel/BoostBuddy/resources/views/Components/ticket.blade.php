@@ -1,4 +1,4 @@
-@props(['name' => 'user', 'game' => 'valorant', 'server' => 'hongkong', 'action' => 'accept']);
+@props(['name' => 'user', 'game' => 'valorant', 'server' => 'hongkong', 'action' => 'accept', 'discord_tag' => 'user#123'])
 
     <tr>
         <td class="py-3 ps-4">

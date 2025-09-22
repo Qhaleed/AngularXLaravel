@@ -10,12 +10,13 @@ class DuoRequestController extends Controller
 {
 
     public function index() {
-        $duoRequests = DuoRequest::all();
+        $duoRequests = DuoRequest::with('user')->orderBy('created_at', 'desc')->get();
         return view('index', compact('duoRequests'));
     }
 
     public function create(){
-        return view('duo_requests.create');
+        $duoRequests = DuoRequest::with('user')->orderBy('created_at', 'desc')->get();
+        return view('index', compact('duoRequests'));
     }
 
     public function store(Request $request){

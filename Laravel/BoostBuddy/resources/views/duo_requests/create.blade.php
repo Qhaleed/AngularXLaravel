@@ -15,31 +15,7 @@
             </div>
         @endif
 
-        <form action="{{ route('duo-requests.store') }}" method="POST" class="space-y-4">
-            @csrf
-
-            <div>
-                <label class="block font-medium">Game</label>
-                <input type="text" name="game" class="w-full border rounded p-2" required>
-                @error('game') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
-            </div>
-
-            <div>
-                <label class="block font-medium">Server</label>
-                <input type="text" name="server" class="w-full border rounded p-2" required>
-                @error('server') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
-            </div>
-
-            <div>
-                <label class="block font-medium">Discord Tag</label>
-                <input type="text" name="discord_tag" placeholder="username#1234" class="w-full border rounded p-2" required>
-                @error('discord_tag') <p class="text-red-500 text-sm">{{ $message }}</p> @enderror
-            </div>
-
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded w-full">
-                Submit Request
-            </button>
-        </form>
+        
     </div>
 
 </body>

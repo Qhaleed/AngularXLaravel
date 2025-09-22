@@ -11,6 +11,7 @@ Route::get('/', function () {
 
 
 
+Route::get('/', [DuoRequestController::class, 'index']);
 
 Route::get('/duo-request/create', [DuoRequestController::class, 'create'])->name('duo-requests.create');
 Route::post('/duo-request', [DuoRequestController::class, 'store'])->name('duo-requests.store');
@@ -24,4 +25,3 @@ Route::post('signup', SignupController::class)->name('signup.attempt');
 // -----------
 
 
-Route::get('/', [DuoRequestController::class, 'index']);

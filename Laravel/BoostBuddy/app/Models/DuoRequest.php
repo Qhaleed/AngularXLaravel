@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class DuoRequest extends Model
 {
 
@@ -22,7 +23,7 @@ class DuoRequest extends Model
         'name',
         'game',
         'server',
-        'discord_link',
+        'discord_tag',
         'status',
     ];
 
@@ -36,5 +37,10 @@ class DuoRequest extends Model
     public function acceptedRequests()
     {
         return $this->hasMany(AcceptedRequest::class);
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 }
