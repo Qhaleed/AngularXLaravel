@@ -25,3 +25,8 @@ Route::post('signup', SignupController::class)->name('signup.attempt');
 // -----------
 
 
+// Route for getting the contact for each ticket
+
+
+Route::get('/duo-request/{id}/contact', [DuoRequestController::class, 'contact'])->name('duo-request.contact');
+

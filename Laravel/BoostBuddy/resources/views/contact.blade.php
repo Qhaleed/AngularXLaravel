@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
+<head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,212 +18,25 @@
             </style>
         @endif
     </head>
-   <body class="flex flex-col h-screen max-w-screen font-cinzel  bg-gray-900 justify-middle align-middle">
+<body class="flex flex-col h-screen max-w-screen font-cinzel bg-gray-900 justify-middle align-middle">
 
-    {{-- signup form --}}
-    <x-signup-modal id="signup-modal" >
+    <x-navbar>BoostBuddy</x-navbar>
 
-        <form
-        {{-- action="{{ route('signup.attempt') }}" --}}
-        action="/signup"
-        method="POST"
-        class="flex flex-col gap-1.5 align-middle">
-            @csrf
+    <div class="flex flex-col mx-10 m-auto gap-3">
+        <h1 class="text-white text-2xl">Contact Details</h1>
 
-            <h1 class="text-white">Name</h1>
-            <x-input type="text" placeholdertemp="Username" name="name">
-            </x-input>
-             <h1 class="text-white">Password</h1>
-            <x-input type="password" placeholdertemp="Password" name="password">
-            </x-input>
-             <h1 class="text-white">Email</h1>
-            <x-input type="Email" placeholdertemp="Email" name="email">
-            </x-input>
+        <div class="bg-gray-800 p-6 rounded-lg text-white">
+            <p><strong>User:</strong> {{ $duoRequest->user->name }}</p>
+            <p><strong>Game:</strong> {{ $duoRequest->game }}</p>
+            <p><strong>Server:</strong> {{ $duoRequest->server }}</p>
+            <p><strong>Discord Tag:</strong> {{ $duoRequest->discord_tag }}</p>
+        </div>
 
-            <button class="bg-blue-500 mt-3 rounded-lg mx-auto px-3 py-1 text-white" type="submit">Sign up</button>
-        </form>
+        <a href="{{ route('duo-requests.index') }}" class="bg-blue-500 text-white px-4 py-2 rounded">
+            Back to Requests
+        </a>
+    </div>
 
-    </x-signup-modal>
-
-    {{-- login form --}}
-    <x-login-modal id="login-modal">
-
-        <form
-
-        action="{{ route('login.attempt') }}"
-        method="POST" class="flex flex-col gap-1.5 align-middle">
-         @csrf
-            @if ($errors->any()){
-                <div>
-                     <ul>
-                        @foreach ( $errors->all() as $error )
-                            <li>{{$error}}</li>
-                        @endforeach
-                     </ul>
-                </div>
-            }
-
-        @endif
-
-
-            <h1 class="text-white">Email</h1>
-            <x-input type="email" name="email" placeholdertemp="email">
-            </x-input>
-             <h1 class="text-white"  >Password</h1>
-            <x-input type="password" placeholdertemp="Password" name="password">
-            </x-input>
-
-
-            <button class="bg-blue-500 mt-3 rounded-lg mx-auto px-3 py-1 text-white" type="submit">Login</button>
-        </form>
-
-    </x-login-modal>
-
-            <x-navbar>
-                BoostBuddy
-            </x-navbar>
-
-            @if (Auth::user())
-                <x-form-modal>
-                </x-form-modal>
-                     {{-- <x-table>
-
-                            <x-ticket name="res "game="valorant" server="hongkong" />
-
-                    </x-table> --}}
-
-
-
-
-                    {{-- This is the table --}}
-                    <div class="flex flex-col mx-10 m-auto gap-3">
-
-                    <button class=" bg-blue-700 hover:bg-blue-900
-                    transition duration-200 max-w-50 rounded-md px-3 py-2
-                     text-white"
-                    id="request-btn">
-                        Request a duo
-                    </button>
-
-                        <div class="-m-1.5 overflow-x-auto">
-                        <div class="p-1.5 min-w-full inline-block align-middle">
-                        <div class="border border-white rounded-lg divide-y divide-gray-200 dark:border-neutral-700 dark:divide-neutral-700">
-                            <div class="py-3 px-4">
-
-                                {{-- Search --}}
-                            <div class="relative max-w-xs">
-                                <label for="hs-table-search" class="sr-only">Search</label>
-                                <input type="text" name="hs-table-search" id="hs-table-search" class="py-1.5 sm:py-2 px-3 ps-9 block w-full border-gray-200 shadow-2xs rounded-lg sm:text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none bg-white dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Search for items">
-                                <div class="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-3">
-                                    <svg class="size-4 text-gray-400 dark:text-neutral-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <circle cx="11" cy="11" r="8"></circle>
-                                        <path d="m21 21-4.3-4.3"></path>
-                                    </svg>
-                                </div>
-                            </div>
-                                {{-- Search --}}
-
-
-
-                            </div>
-                            <div class="overflow-hidden">
-                            <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
-
-                                <thead class="bg-gray-50 dark:bg-neutral-700">
-                                <tr>
-                                    <th scope="col" class="py-3 px-4 pe-0">
-
-                                    </th>
-                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Name</th>
-                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Game</th>
-                                    <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Server</th>
-                                    <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-500 uppercase dark:text-neutral-500">Accept</th>
-                                </tr>
-                                </thead>
-                                <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
-
-                                    {{-- All data are hardcoded and will soon be dynamic when db is up --}}
-                                    {{-- <x-ticket name="Blebleble" game="valorant" server="hongkong">
-                                    </x-ticket> --}}
-                                    {{-- @foreach ($duoRequests as $request)
-                                        <x-ticket :name="$request->user->name" :game="$request->game" :server="$request->server" />
-
-                                    @endforeach --}}
-                                    {{-- {{ $slot }} --}}
-
-                                            @foreach ( $duoRequests as $request )
-
-                                                <x-ticket :id="$request->id" :name="$request->user->name" :game="$request->game" :server="$request->server" :discord_tag="$request->discord_tag" />
-                                            @endforeach
-
-
-
-                                </tbody>
-                            </table>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-
-
-
-
-
-</div>
-
-
-            @else
-                <x-header>
-                            <x-slot:title>
-                            Boost Buddy
-                            </x-slot:title>
-
-                            <x-slot:subtitle>
-                            Team up and dominate.
-                            <br />
-
-                            </x-slot:subtitle>
-
-
-                        </x-header>
-                        <x-content>
-                            <x-slot:gridhead>
-                                BoostBuddy
-                            </x-slot:gridhead>
-                            <x-onboarding>
-                                    Join Now!
-                            </x-onboarding>
-
-                            <x-slot:gridsubtitle>
-                            Find your dream duo now!
-                            </x-slot:gridsubtitle>
-
-                        </x-content>
-
-            @endif
-
-
-
-
-
-
-
-
-
-            <x-footer>
-            </x-footer>
-
-            <script src="./node_modules/preline/dist/preline.js"></script>
-            {{-- <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    const requestBtn = document.getElementById('request-btn');
-                    if (requestBtn) {
-                        requestBtn.addEventListener('click', function() {
-                            alert('clicked');
-                        });
-                    }
-                });
-            </script> --}}
-   </body>
+    <x-footer></x-footer>
+</body>
 </html>

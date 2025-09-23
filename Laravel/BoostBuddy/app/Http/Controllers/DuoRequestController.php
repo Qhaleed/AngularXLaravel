@@ -38,6 +38,10 @@ class DuoRequestController extends Controller
 
     }
 
+    public function contact ($id){
+        $duoRequest = DuoRequest::with('user')->findOrFail($id);
+        return view('contact', compact('duoRequest'));
+    }
 
 
 }
